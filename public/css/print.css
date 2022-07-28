@@ -1,0 +1,9 @@
+body{
+    background-image: url('/logo.JPEG');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 40%;
+}
+.container{
+    background-color: rgba(255, 255, 255, .9);
+}

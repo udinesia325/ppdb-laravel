@@ -1,6 +1,7 @@
 @extends('template.index')
 
 @section('content')
+<h1 class="m-3">Data siswa terdaftar di SMK Babussalam</h1>
         <div class="table-responsive">
             <table class="table table-hover">
                 <thead>
@@ -20,7 +21,11 @@
                         <td>{{ $s->nm_peserta }}</td>
                         <td >{{ $s->tgl_lahir }}</td>
                         <td>
-                        <a href="/siswa/detail/{{ $s->id }}" class="btn btn-sm btn-warning fw-bold">detail</a></td>
+                        <a href="/siswa/cetak/{{ $s->id }}" class="btn btn-sm btn-danger fw-bold">Cetak PDF</a>
+                        @if(!Auth::guest())
+                        <a href="/siswa/detail/{{ $s->id }}" class="btn btn-sm btn-warning fw-bold">detail</a>
+                        @endif
+                        </td>
                     </tr>
                  <?php $no++ ?>
                 @empty

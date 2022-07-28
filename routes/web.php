@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\DataSiswaController;
+use App\Http\Controllers\LoginController;
+use App\Models\DataSiswa;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,5 +16,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [DataSiswaController::class,"index"]);
-Route::get('/siswa/detail/{id}', [DataSiswaController::class,"show"]);
+Route::get('/', function(){
+    $data = [
+        "jumlah"=>DataSiswa::all()->count()
+    ];
+    return view('user.index',$data);
+});
+Route::get('/register',[DataSiswaController::class,'register']);
+Route::get("/login",[LoginController::class,'index'])->name("login");
+Route::post("/login",[LoginController::class,'process']);
+
+Route::get("/logout",[LoginController::class,'logout'])->name("logout");
+Route::get('/siswa', [DataSiswaController::class,"index"])->name("siswa");
+Route::post('/register', [DataSiswaController::class,"store"])->name("register");
+Route::get('/siswa/detail/{id}', [DataSiswaController::class,"show"])->middleware('auth');
+Route::get('/siswa/cetak/{id}', [DataSiswaController::class,"print"]);

@@ -10,3 +10,4 @@ class DataSiswa extends Model
     use HasFactory;
     protected $guarded = [];
 }
+?>

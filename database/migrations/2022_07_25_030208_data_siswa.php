@@ -16,7 +16,7 @@ class DataSiswa extends Migration
         //
         Schema::create('data_siswas',function(Blueprint $table){
             $table->id();
-            $table->date("tgl_daftar");
+            // $table->date("tgl_daftar");
             $table->integer("thn_ajaran");
             $table->string("jurusan");
             $table->string("nm_peserta");

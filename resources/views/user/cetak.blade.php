@@ -1,9 +1,22 @@
-@extends('template.index')
-@section('content')
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <title>Data Siswa {{ $siswa->nm_peserta }}</title>
+</head>
+
+<body>
     <div class="container">
         <h3 class="text-center mt-3 pt-4 mb-2">Data Siswa Terdaftar Di SMK BABUSSALAM</h3>
+        <p class="text-center">Tahun Ajaran {{ date('Y') }}/{{ date('Y') + 1 }}</p>
+
         <div class="row justify-content-center">
             <div class="col col-8 px-5 d-flex flex-column">
+                <hr>
                 <table cellpadding="4">
                     <tr>
                         <td><b>Nama </b></td>
@@ -43,16 +56,6 @@
                         <td>: {{ $siswa->kode_pos }}</td>
                     </tr>
                     <tr>
-                        <td colspan="2">
-                            <hr>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <h6>Data Wali</h6>
-                        </td>
-                    </tr>
-                    <tr>
                         <td><b>Nama Ayah</b></td>
                         <td>: {{ $siswa->nm_ayah }}</td>
                     </tr>
@@ -88,4 +91,6 @@
             </div>
         </div>
     </div>
-@endsection
+</body>
+
+</html>

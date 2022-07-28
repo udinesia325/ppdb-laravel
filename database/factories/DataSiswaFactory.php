@@ -15,7 +15,7 @@ class DataSiswaFactory extends Factory
     {
         $state = mt_rand(1, 2);
         return [
-            "tgl_daftar" => $this->faker->date(),
+            // "tgl_daftar" => $this->faker->date(),
             "thn_ajaran" => mt_rand(2022, 2023),
             "jurusan" => $state == 1 ? "rpl" : "tb",
             "nm_peserta" => $this->faker->name(),
