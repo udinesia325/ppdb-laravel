@@ -28,6 +28,10 @@ Route::post("/login",[LoginController::class,'process']);
 
 Route::get("/logout",[LoginController::class,'logout'])->name("logout");
 Route::get('/siswa', [DataSiswaController::class,"index"])->name("siswa");
+Route::get('/siswa/hapus/{id}',function($id){
+    DataSiswa::destroy($id);
+    return redirect("siswa")->with("pesan","berhasil di hapus");
+});
 Route::post('/register', [DataSiswaController::class,"store"])->name("register");
 Route::get('/siswa/detail/{id}', [DataSiswaController::class,"show"])->middleware('auth');
 Route::get('/siswa/cetak/{id}', [DataSiswaController::class,"print"]);

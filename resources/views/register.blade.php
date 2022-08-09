@@ -1,7 +1,7 @@
 @extends('template.index')
 
 @section('content')
-    <div class="row justify-content-center pt-4">
+    <div class="row justify-content-center pt-4 bg-white">
         <div class="col col-10 col-md-10 col-lg-7 px-3 py-4 card form-ku">
             <div class="card-header">
                 <h1 class="text-center">Formulir Daftar Peserta Didik</h1>

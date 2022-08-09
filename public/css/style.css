@@ -1,5 +1,16 @@
 body {
-    /* background-image: url("/logo.jpeg"); */
+    height: 100vh;
+}
+body::before {
+    content: " ";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -100;
+    opacity: 0.1;
+    background-image: url("/logo.jpeg");
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center 60px;
@@ -18,15 +29,27 @@ body {
     background-color: white;
     background-repeat: no-repeat;
     background-position: center 62px;
-    transition: all .5s ease;
+    transition: all 0.5s ease;
 }
-.form-ku{
-    background-color: rgba(255, 255, 255, .8);
+.form-ku {
+    background-color: #ffffff1c;
     backdrop-filter: blur(5px);
 }
-.base-card{
-    transition: all .4s cubic-bezier(0.075, 0.82, 0.165, 1);
+.base-card {
+    transition: all 0.4s cubic-bezier(0.075, 0.82, 0.5, 1);
+    border-radius: 20px;
 }
-.base-card:hover{
+.base-card:hover {
     transform: scale(1.05);
+    box-shadow: 8px 15px 10px rgb(158, 154, 154) !important;
+}
+.registered-card{
+    background-image: url('/person-video2.svg');
+    background-repeat: no-repeat;
+    background-position: .5em center;
+}
+.register-card{
+    background-image: url('/person-plus.svg');
+    background-repeat: no-repeat;
+    background-position: .5em center;
 }

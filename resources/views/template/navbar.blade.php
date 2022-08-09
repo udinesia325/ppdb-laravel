@@ -15,12 +15,12 @@
                 <li class="nav-item">
                     <a class="nav-link " aria-current="page" href="/">Home</a>
                 </li>
-                <li class="nav-item">
+               <li class="nav-item">
                     <a class="nav-link {{ $page == 'dashboard' ? 'active' : '' }}" href="/siswa">Data Siswa</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link {{ $page == 'register' ? 'active' : '' }}" href="/register">Daftar Siswa Baru</a>
-                </li>
+                </li> 
                 <li class="nav-item">
                     @if (Auth::guest())
                         <a class="nav-link" href="{{ route('login') }}">Login</a>
