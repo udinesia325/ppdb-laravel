@@ -9,12 +9,12 @@
             <div class="card-body">
                 <form method="post" autocomplete="off">
                     @csrf
-                    @error('pesan')
-                        <div class="alert alert-danger alert-dismissible">
-                            <strong>{{ $message }}</strong>
+                    @if (session()->has('pesan'))
+                        <div class="alert alert-success alert-dismissible">
                             <div class="btn-close" data-bs-dismiss="alert"></div>
+                            <strong>{{ session('pesan') }}</strong>
                         </div>
-                    @enderror
+                    @endif
                     <div class="form-group">
                         <div class="my-3 row">
                             <label for="email" class="col-sm-3 col-form-label">Email</label>
@@ -32,11 +32,11 @@
                         </div>
                     </div>
             </div>
-                   <div class="form-group my-4 d-flex justify-content-center">
+            <div class="form-group my-4 d-flex justify-content-center">
                 <button class="btn btn-dark px-4">Login</button>
             </div>
-           
-         
+
+
             </form>
         </div>
     </div>

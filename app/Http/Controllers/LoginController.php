@@ -24,9 +24,7 @@ class LoginController extends Controller
             $request->session()->regenerate();
             return redirect()->intended("/");
         }
-        return back()->withErrors([
-            "pesan" => "email atau password salah"
-        ]);
+      return redirect("login")->with("pesan","username atau password salah");
     }
     public function logout()
     {
